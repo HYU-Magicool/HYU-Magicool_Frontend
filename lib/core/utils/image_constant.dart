@@ -2,86 +2,6 @@ class ImageConstant {
   // Image folder path
   static String imagePath = 'assets/images';
 
-  // One images
-  static String img01 = '$imagePath/img_01.png';
-
-  // Two images
-  static String img02 = '$imagePath/img_02.png';
-
-  // Three images
-  static String img03 = '$imagePath/img_03.png';
-
-  static String imgIconPrimary16x16 = '$imagePath/img_icon_primary_16x16.svg';
-
-  // Four images
-  static String img04 = '$imagePath/img_04.png';
-
-  // Five images
-  static String img05 = '$imagePath/img_05.png';
-
-  // Six images
-  static String img061 = '$imagePath/img_06_1.png';
-
-  // Seven images
-  static String img07 = '$imagePath/img_07.png';
-
-  // Eight images
-  static String img08 = '$imagePath/img_08.png';
-
-  static String imgIcon16x16 = '$imagePath/img_icon_16x16.svg';
-
-  // Nine images
-  static String img09 = '$imagePath/img_09.png';
-
-  // Ten images
-  static String img10 = '$imagePath/img_10.png';
-
-  static String img10252x298 = '$imagePath/img_10_252x298.png';
-
-  static String imgInfo = '$imagePath/img_info.svg';
-
-  // Eleven images
-  static String img11 = '$imagePath/img_11.png';
-
-  // UI/Title images
-  static String imgUser = '$imagePath/img_user.svg';
-
-  // iPhone 13 Pro Max - One images
-  static String imgRectangle15 = '$imagePath/img_rectangle_15.png';
-
-  static String imgScreenshot2022 = '$imagePath/img_screenshot_2022.png';
-
-  static String imgScreenshot2022338x238 =
-      '$imagePath/img_screenshot_2022_338x238.png';
-
-  static String imgScreenshot2022328x322 =
-      '$imagePath/img_screenshot_2022_328x322.png';
-
-  static String imgGamePro1 = '$imagePath/img_game_pro_1.png';
-
-  static String imgFrame4 = '$imagePath/img_frame_4.svg';
-
-  // iPhone 13 Pro Max - Two images
-  static String imgGreenGradient1 = '$imagePath/img_green_gradient_1.png';
-
-  static String imgAllSports1 = '$imagePath/img_all_sports_1.png';
-
-  static String imgFrame5 = '$imagePath/img_frame_5.svg';
-
-  // iPhone 13 Pro Max - Three images
-  static String imgRectangle17 = '$imagePath/img_rectangle_17.png';
-
-  static String imgScreenshot2022429x453 =
-      '$imagePath/img_screenshot_2022_429x453.png';
-
-  static String imgScreenshot2022234x400 =
-      '$imagePath/img_screenshot_2022_234x400.png';
-
-  static String imgScreenshot2022440x434 =
-      '$imagePath/img_screenshot_2022_440x434.png';
-
-  static String imgFrame6 = '$imagePath/img_frame_6.svg';
-
   // iPhone 13 Pro Max - Six images
   static String imgVector = '$imagePath/img_vector.svg';
 
@@ -93,8 +13,14 @@ class ImageConstant {
   // iPhone 13 Pro Max - Eight images
   static String imgArcticonsPassword = '$imagePath/img_arcticons_password.svg';
 
-  // Login  One images
-  static String imgVectorOnerror = '$imagePath/img_vector_onerror.svg';
+  // Login_확정  images
+  static String imgVectorPrimary = '$imagePath/img_vector_primary.svg';
+
+  static String imgGroup17 = '$imagePath/img_group_17.svg';
+
+  static String img = '$imagePath/img_.svg';
+
+  static String imgGroup16 = '$imagePath/img_group_16.png';
 
   // Splash Screen images
   static String imgImage5 = '$imagePath/img_image_5.png';
@@ -104,14 +30,13 @@ class ImageConstant {
   // 임시 로고 images
   static String imgImage4450x464 = '$imagePath/img_image_4_450x464.png';
 
-  // 메인 탭 One images
-  static String imgIconPrimarycontainer =
-      '$imagePath/img_icon_primarycontainer.svg';
+  // 메인 탭(확정)_스피커 이용 images
+  static String imgRecordVoiceOver = '$imagePath/img_record_voice_over.svg';
 
-  static String imgRemoveclosex = '$imagePath/img_removeclosex.svg';
+  // 디바이스 탭 images
+  static String imgSearch = '$imagePath/img_search.svg';
 
-  // iPhone 12 Mini Screen (Replace This) images
-  static String imgReplaceThisScreen = '$imagePath/img_replace_this_screen.png';
+  static String imgProIcon = '$imagePath/img_pro_icon.svg';
 
   // 리포트 탭 images
   static String imgNavReport = '$imagePath/img_nav_report.svg';
@@ -120,32 +45,25 @@ class ImageConstant {
   static String imgSystemSettingsLine =
       '$imagePath/img_system_settings_line.svg';
 
-  static String imgAccountUser = '$imagePath/img_account_user.svg';
+  static String imgAccountuser = '$imagePath/img_accountuser.svg';
 
-  static String imgArrowRight = '$imagePath/img_arrow_right.svg';
+  static String imgChevronarrowleft = '$imagePath/img_chevronarrowleft.svg';
 
   static String imgLock = '$imagePath/img_lock.svg';
 
-  static String imgMediaVolumeUpFill =
-      '$imagePath/img_media_volume_up_fill.svg';
+  static String imgMediaVolumeupfill = '$imagePath/img_media_volumeupfill.svg';
 
   static String imgUserIndigoA400 = '$imagePath/img_user_indigo_a400.svg';
 
   // Common images
-  static String imgIcon = '$imagePath/img_icon.svg';
+  static String imgWomanPowerAlone = '$imagePath/img_woman_power_alone.png';
 
-  static String imgIconPrimary = '$imagePath/img_icon_primary.svg';
-
-  static String imgIconPrimary9x9 = '$imagePath/img_icon_primary_9x9.svg';
-
-  static String imgIconPrimary12x18 = '$imagePath/img_icon_primary_12x18.svg';
+  static String imgImage14 = '$imagePath/img_image_14.png';
 
   static String imgMediaNotificationsLine =
       '$imagePath/img_media_notifications_line.svg';
 
-  static String imgWomanPowerAlone = '$imagePath/img_woman_power_alone.png';
-
-  static String imgGroup5 = '$imagePath/img_group_5.svg';
+  static String imgGroup31 = '$imagePath/img_group_31.svg';
 
   static String imgMediaMicLine = '$imagePath/img_media_mic_line.svg';
 
@@ -155,15 +73,17 @@ class ImageConstant {
 
   static String imgAnalysis = '$imagePath/img_analysis.svg';
 
-  static String imgUserOnprimarycontainer =
-      '$imagePath/img_user_onprimarycontainer.svg';
+  static String imgUser = '$imagePath/img_user.svg';
 
-  static String imgSearch = '$imagePath/img_search.svg';
+  static String imgIconOnerrorcontainer =
+      '$imagePath/img_icon_onerrorcontainer.svg';
 
-  static String imgProIcon = '$imagePath/img_pro_icon.svg';
+  static String imgIconOnerrorcontainer16x16 =
+      '$imagePath/img_icon_onerrorcontainer_16x16.svg';
 
-  static String imgHomeOnprimarycontainer =
-      '$imagePath/img_home_onprimarycontainer.svg';
+  static String imgRemoveclosex = '$imagePath/img_removeclosex.svg';
+
+  static String imgHomeLinear = '$imagePath/img_home_linear.svg';
 
   static String imgWalletIndigoA400 = '$imagePath/img_wallet_indigo_a400.svg';
 

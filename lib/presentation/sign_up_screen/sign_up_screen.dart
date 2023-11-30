@@ -21,7 +21,7 @@ class SignUpScreen extends StatelessWidget {
               horizontal: 47.h,
               vertical: 68.v,
             ),
-            decoration: AppDecoration.fillOnError,
+            decoration: AppDecoration.fillPrimary,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -32,11 +32,11 @@ class SignUpScreen extends StatelessWidget {
                       children: [
                         TextSpan(
                           text: "회원가입 \n",
-                          style: theme.textTheme.headlineSmall,
+                          style: CustomTextStyles.headlineSmallInter,
                         ),
                         TextSpan(
                           text: "\n",
-                          style: CustomTextStyles.headlineSmallBlueA700,
+                          style: CustomTextStyles.headlineSmallInterBlueA700,
                         ),
                       ],
                     ),
@@ -49,8 +49,8 @@ class SignUpScreen extends StatelessWidget {
                   height: 58.v,
                   text: "계정 만들기".toUpperCase(),
                   margin: EdgeInsets.only(left: 1.h),
-                  buttonStyle: CustomButtonStyles.outlineSecondaryContainer,
-                  buttonTextStyle: theme.textTheme.titleMedium!,
+                  buttonStyle: CustomButtonStyles.outlineBlueA,
+                  buttonTextStyle: CustomTextStyles.titleMediumNunitoPrimary,
                 ),
               ],
             ),

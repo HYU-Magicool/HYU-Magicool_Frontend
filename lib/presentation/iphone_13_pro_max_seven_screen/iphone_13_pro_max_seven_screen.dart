@@ -22,8 +22,8 @@ class Iphone13ProMaxSevenScreen extends StatelessWidget {
                                   left: 85.h, right: 85.h, bottom: 115.v),
                               child: Column(children: [
                                 Text("Verify your Email",
-                                    style: CustomTextStyles
-                                        .headlineSmallRobotoGray800),
+                                    style:
+                                        CustomTextStyles.headlineSmallGray800),
                                 SizedBox(height: 46.v),
                                 Container(
                                     height: 200.adaptSize,
@@ -45,8 +45,7 @@ class Iphone13ProMaxSevenScreen extends StatelessWidget {
                                         "Please enter the Four digit code sent to Ju*********11@gmail.com",
                                         maxLines: 2,
                                         overflow: TextOverflow.ellipsis,
-                                        style: CustomTextStyles
-                                            .titleMediumInterGray80001)),
+                                        style: theme.textTheme.titleMedium)),
                                 SizedBox(height: 100.v),
                                 CustomImageView(
                                     imagePath: ImageConstant.imgFrame8,

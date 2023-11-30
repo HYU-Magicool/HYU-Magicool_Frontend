@@ -48,15 +48,17 @@ class ThemeHelper {
       visualDensity: VisualDensity.standard,
       colorScheme: colorScheme,
       textTheme: TextThemes.textTheme(colorScheme),
-      scaffoldBackgroundColor: colorScheme.onError.withOpacity(1),
-      elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: appTheme.purple500.withOpacity(0.72),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(32.h),
+      scaffoldBackgroundColor: colorScheme.primary,
+      outlinedButtonTheme: OutlinedButtonThemeData(
+        style: OutlinedButton.styleFrom(
+          backgroundColor: Colors.transparent,
+          side: BorderSide(
+            color: colorScheme.onErrorContainer,
+            width: 1.h,
           ),
-          shadowColor: colorScheme.primary,
-          elevation: 4,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(4.h),
+          ),
           visualDensity: const VisualDensity(
             vertical: -4,
             horizontal: -4,
@@ -64,16 +66,14 @@ class ThemeHelper {
           padding: EdgeInsets.zero,
         ),
       ),
-      outlinedButtonTheme: OutlinedButtonThemeData(
-        style: OutlinedButton.styleFrom(
-          backgroundColor: Colors.transparent,
-          side: BorderSide(
-            color: colorScheme.primaryContainer,
-            width: 1.h,
-          ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: appTheme.purple500.withOpacity(0.72),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(4.h),
+            borderRadius: BorderRadius.circular(32.h),
           ),
+          shadowColor: appTheme.black900.withOpacity(0.25),
+          elevation: 4,
           visualDensity: const VisualDensity(
             vertical: -4,
             horizontal: -4,
@@ -99,7 +99,7 @@ class ThemeHelper {
       dividerTheme: DividerThemeData(
         thickness: 1,
         space: 1,
-        color: appTheme.gray200,
+        color: colorScheme.secondaryContainer,
       ),
     );
   }
@@ -127,57 +127,57 @@ class TextThemes {
           fontWeight: FontWeight.w400,
         ),
         bodySmall: TextStyle(
-          color: colorScheme.primary.withOpacity(0.8),
+          color: appTheme.black900.withOpacity(0.8),
           fontSize: 11.fSize,
           fontFamily: 'Inter',
           fontWeight: FontWeight.w400,
         ),
         displaySmall: TextStyle(
-          color: colorScheme.primary.withOpacity(1),
+          color: appTheme.black900,
           fontSize: 38.fSize,
           fontFamily: 'Inter',
           fontWeight: FontWeight.w700,
         ),
         headlineLarge: TextStyle(
-          color: colorScheme.primary.withOpacity(1),
+          color: appTheme.black900,
           fontSize: 30.fSize,
           fontFamily: 'Advent Pro',
           fontWeight: FontWeight.w700,
         ),
         headlineSmall: TextStyle(
-          color: colorScheme.primary.withOpacity(1),
-          fontSize: 25.fSize,
-          fontFamily: 'Inter',
-          fontWeight: FontWeight.w700,
+          color: appTheme.black900,
+          fontSize: 24.fSize,
+          fontFamily: 'Roboto',
+          fontWeight: FontWeight.w400,
         ),
         labelLarge: TextStyle(
-          color: appTheme.gray700,
-          fontSize: 13.fSize,
-          fontFamily: 'Noto Sans KR',
+          color: appTheme.indigoA400,
+          fontSize: 12.fSize,
+          fontFamily: 'Abhaya Libre',
           fontWeight: FontWeight.w700,
         ),
         labelMedium: TextStyle(
-          color: colorScheme.primary.withOpacity(0.8),
+          color: appTheme.black900.withOpacity(0.8),
           fontSize: 11.fSize,
           fontFamily: 'Inter',
           fontWeight: FontWeight.w600,
         ),
         titleLarge: TextStyle(
-          color: colorScheme.primary.withOpacity(1),
+          color: appTheme.black900,
           fontSize: 20.fSize,
           fontFamily: 'Inter',
           fontWeight: FontWeight.w700,
         ),
         titleMedium: TextStyle(
-          color: colorScheme.onError.withOpacity(1),
+          color: appTheme.gray80001,
           fontSize: 16.fSize,
-          fontFamily: 'Nunito',
-          fontWeight: FontWeight.w700,
+          fontFamily: 'Inter',
+          fontWeight: FontWeight.w500,
         ),
         titleSmall: TextStyle(
-          color: colorScheme.primary.withOpacity(1),
-          fontSize: 15.fSize,
-          fontFamily: 'Advent Pro',
+          color: colorScheme.onErrorContainer,
+          fontSize: 14.fSize,
+          fontFamily: 'Roboto',
           fontWeight: FontWeight.w700,
         ),
       );
@@ -187,28 +187,29 @@ class TextThemes {
 class ColorSchemes {
   static final primaryColorScheme = ColorScheme.light(
     // Primary colors
-    primary: Color(0X3F000000),
-    primaryContainer: Color(0XFF181D20),
-    secondaryContainer: Color(0XFF2574FF),
+    primary: Color(0XFFFFFFFF),
+    primaryContainer: Color(0XFF0949EB),
+    secondaryContainer: Color(0XFFEEEEEF),
 
     // Error colors
     errorContainer: Color(0XD348BAF9),
     onError: Color(0X7EFFFFFF),
+    onErrorContainer: Color(0XFF181D20),
 
     // On colors(text colors)
     onPrimary: Color(0XFF2F2D51),
-    onPrimaryContainer: Color(0XFF9DB2CE),
-    onSecondaryContainer: Color(0XCE270644),
+    onPrimaryContainer: Color(0XFF080808),
   );
 }
 
 /// Class containing custom colors for a primary theme.
 class PrimaryColors {
   // Black
-  Color get black900 => Color(0XFF080808);
+  Color get black900 => Color(0XFF000000);
 
   // Blue
   Color get blue500 => Color(0XFF189FFA);
+  Color get blueA400 => Color(0XFF2574FF);
   Color get blueA700 => Color(0XFF016DFF);
 
   // BlueDd
@@ -226,18 +227,25 @@ class PrimaryColors {
 
   // Gray
   Color get gray100 => Color(0XFFEDF5FA);
-  Color get gray200 => Color(0XFFEEEEEF);
   Color get gray50 => Color(0XFFFAFAFA);
   Color get gray600 => Color(0XFF7B7B7B);
   Color get gray700 => Color(0XFF666666);
   Color get gray800 => Color(0XFF484242);
   Color get gray80001 => Color(0XFF484343);
+  Color get gray80002 => Color(0XFF393939);
   Color get gray900 => Color(0XFF222222);
 
+  // GrayCe
+  Color get gray900Ce => Color(0XCE270644);
+
+  // Green
+  Color get greenA700 => Color(0XFF03C75A);
+
   // Indigo
+  Color get indigo200 => Color(0XFF9DB2CE);
+  Color get indigo400 => Color(0XFF6E6CD8);
   Color get indigo50 => Color(0XFFE1E8FB);
   Color get indigoA400 => Color(0XFF386BF6);
-  Color get indigoA700 => Color(0XFF0949EB);
 
   // Orange
   Color get orangeA200 => Color(0XFFFFAC4B);
@@ -248,10 +256,16 @@ class PrimaryColors {
 
   // Red
   Color get red100 => Color(0XFFFFC9C9);
+  Color get red10001 => Color(0XFFFFCBCB);
+  Color get redA700 => Color(0XFFFF000F);
+
+  // Teal
+  Color get teal100 => Color(0XFFB9ECE0);
 
   // Yellow
   Color get yellow100 => Color(0XFFFFE9C9);
-  Color get yellowA400 => Color(0XFFFFEB00);
+  Color get yellowA400 => Color(0XFFFEE500);
+  Color get yellowA40001 => Color(0XFFFFEB00);
 }
 
 PrimaryColors get appTheme => ThemeHelper().themeColor();

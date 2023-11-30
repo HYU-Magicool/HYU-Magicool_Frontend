@@ -27,8 +27,8 @@ class Iphone13ProMaxSixScreen extends StatelessWidget {
                                   left: 40.h, right: 40.h, bottom: 115.v),
                               child: Column(children: [
                                 Text("Reset Password",
-                                    style: CustomTextStyles
-                                        .headlineSmallRobotoGray800),
+                                    style:
+                                        CustomTextStyles.headlineSmallGray800),
                                 SizedBox(height: 48.v),
                                 Container(
                                     margin:
@@ -107,7 +107,7 @@ class Iphone13ProMaxSixScreen extends StatelessWidget {
                                                                             .h),
                                                                 child: Text("?",
                                                                     style: CustomTextStyles
-                                                                        .headlineSmallRobotoGray80001)))
+                                                                        .headlineSmallGray80001)))
                                                       ])))
                                         ])),
                                 SizedBox(height: 45.v),
@@ -121,8 +121,8 @@ class Iphone13ProMaxSixScreen extends StatelessWidget {
                                             "Enter the Email associated with your acoount to receive a verification code",
                                             maxLines: 2,
                                             overflow: TextOverflow.ellipsis,
-                                            style: CustomTextStyles
-                                                .titleMediumInterGray80001))),
+                                            style:
+                                                theme.textTheme.titleMedium))),
                                 SizedBox(height: 61.v),
                                 Align(
                                     alignment: Alignment.centerLeft,
@@ -133,7 +133,10 @@ class Iphone13ProMaxSixScreen extends StatelessWidget {
                                 SizedBox(height: 13.v),
                                 CustomTextFormField(
                                     controller: editTextController,
-                                    textInputAction: TextInputAction.done),
+                                    textInputAction: TextInputAction.done,
+                                    borderDecoration:
+                                        TextFormFieldStyleHelper.fillPrimary,
+                                    fillColor: theme.colorScheme.primary),
                                 SizedBox(height: 77.v),
                                 Text("Try another way",
                                     style: CustomTextStyles

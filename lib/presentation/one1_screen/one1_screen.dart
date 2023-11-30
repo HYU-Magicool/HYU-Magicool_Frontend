@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart' as fs;
 import 'package:magicool/core/app_export.dart';
-import 'package:magicool/presentation/k25_page/k25_page.dart';
-import 'package:magicool/presentation/k31_page/k31_page.dart';
+import 'package:magicool/presentation/k20_page/k20_page.dart';
+import 'package:magicool/presentation/k8_page/k8_page.dart';
 import 'package:magicool/widgets/app_bar/appbar_title_edittext.dart';
 import 'package:magicool/widgets/app_bar/appbar_trailing_image.dart';
 import 'package:magicool/widgets/app_bar/custom_app_bar.dart';
 import 'package:magicool/widgets/custom_bottom_bar.dart';
-import 'package:magicool/widgets/custom_elevated_button.dart';
 import 'package:magicool/widgets/custom_outlined_button.dart';
 
 class One1Screen extends StatelessWidget {
@@ -32,53 +31,63 @@ class One1Screen extends StatelessWidget {
           width: double.maxFinite,
           padding: EdgeInsets.symmetric(horizontal: 4.h),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _buildGeneric(context),
+              _buildImageContainer(context),
+              SizedBox(height: 16.v),
+              CustomOutlinedButton(
+                text: "보러가기",
+                margin: EdgeInsets.only(
+                  left: 17.h,
+                  right: 16.h,
+                ),
+              ),
               SizedBox(height: 26.v),
-              Padding(
-                padding: EdgeInsets.only(left: 19.h),
-                child: Text(
-                  "[냉장고 여유공간]",
-                  textAlign: TextAlign.center,
-                  style: CustomTextStyles.bodyMediumArialPrimary,
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 19.h),
+                  child: Text(
+                    "[냉장고 여유공간]",
+                    textAlign: TextAlign.center,
+                    style: CustomTextStyles.bodyMediumArialBlack900,
+                  ),
                 ),
               ),
               SizedBox(height: 9.v),
-              _buildThirtyTwo(context),
+              _buildThirtyNine(context),
               SizedBox(height: 22.v),
-              Padding(
-                padding: EdgeInsets.only(left: 19.h),
-                child: Text(
-                  "[음성 인식]",
-                  textAlign: TextAlign.center,
-                  style: CustomTextStyles.bodyMediumArialPrimary,
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 19.h),
+                  child: Text(
+                    "[음성 인식]",
+                    textAlign: TextAlign.center,
+                    style: CustomTextStyles.bodyMediumArialBlack900,
+                  ),
                 ),
               ),
               SizedBox(height: 5.v),
-              Align(
-                alignment: Alignment.center,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    CustomImageView(
-                      imagePath: ImageConstant.imgMediaMicLine,
-                      height: 24.adaptSize,
-                      width: 24.adaptSize,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CustomImageView(
+                    imagePath: ImageConstant.imgMediaMicLine,
+                    height: 24.adaptSize,
+                    width: 24.adaptSize,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: 6.h,
+                      top: 3.v,
+                      bottom: 2.v,
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        left: 6.h,
-                        top: 3.v,
-                        bottom: 2.v,
-                      ),
-                      child: Text(
-                        "스피커를 이용해 보세요!",
-                        style: CustomTextStyles.bodyMediumArialPrimary,
-                      ),
+                    child: Text(
+                      "스피커를 이용해 보세요!",
+                      style: CustomTextStyles.bodyMediumArialBlack900,
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
               SizedBox(height: 5.v),
             ],
@@ -107,112 +116,83 @@ class One1Screen extends StatelessWidget {
   }
 
   /// Section Widget
-  Widget _buildGeneric(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(left: 1.h),
-      child: Column(
+  Widget _buildImageContainer(BuildContext context) {
+    return SizedBox(
+      height: 216.v,
+      width: 366.h,
+      child: Stack(
+        alignment: Alignment.bottomCenter,
         children: [
-          SizedBox(
-            height: 216.v,
-            width: 366.h,
-            child: Stack(
-              alignment: Alignment.bottomCenter,
-              children: [
-                Align(
-                  alignment: Alignment.topCenter,
-                  child: Container(
-                    height: 184.v,
-                    width: 366.h,
-                    decoration: BoxDecoration(
-                      color: theme.colorScheme.onError.withOpacity(1),
-                      borderRadius: BorderRadius.circular(
-                        16.h,
-                      ),
-                    ),
-                  ),
+          Align(
+            alignment: Alignment.topCenter,
+            child: Container(
+              height: 184.v,
+              width: 366.h,
+              decoration: BoxDecoration(
+                color: theme.colorScheme.primary,
+                borderRadius: BorderRadius.circular(
+                  16.h,
                 ),
-                Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Card(
-                    clipBehavior: Clip.antiAlias,
-                    elevation: 0,
-                    margin: EdgeInsets.all(0),
-                    color: appTheme.blueGray50,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadiusStyle.roundedBorder9,
-                    ),
-                    child: Container(
-                      height: 200.v,
-                      width: 334.h,
-                      padding: EdgeInsets.all(8.h),
-                      decoration: AppDecoration.fillBlueGray.copyWith(
-                        borderRadius: BorderRadiusStyle.roundedBorder9,
-                      ),
-                      child: Stack(
-                        alignment: Alignment.topLeft,
-                        children: [
-                          CustomImageView(
-                            imagePath: ImageConstant.imgWomanPowerAlone,
-                            height: 184.v,
-                            width: 318.h,
-                            alignment: Alignment.center,
-                          ),
-                          Align(
-                            alignment: Alignment.topLeft,
-                            child: Padding(
-                              padding: EdgeInsets.only(
-                                left: 18.h,
-                                top: 17.v,
-                              ),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "안녕하세요 정유빈 님,",
-                                    style: CustomTextStyles.headlineSmallRoboto,
-                                  ),
-                                  Text(
-                                    "11월 20일 수요일",
-                                    style: CustomTextStyles
-                                        .headlineSmallRobotoBluegray600,
-                                  ),
-                                  SizedBox(height: 54.v),
-                                  Text(
-                                    "연동을 완료해주세요",
-                                    style: CustomTextStyles.headlineSmallRoboto,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ],
+              ),
             ),
           ),
-          SizedBox(height: 16.v),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.h),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CustomOutlinedButton(
-                  width: 159.h,
-                  text: "보러가기",
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Card(
+              clipBehavior: Clip.antiAlias,
+              elevation: 0,
+              margin: EdgeInsets.all(0),
+              color: appTheme.blueGray50,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadiusStyle.roundedBorder9,
+              ),
+              child: Container(
+                height: 200.v,
+                width: 334.h,
+                padding: EdgeInsets.all(8.h),
+                decoration: AppDecoration.fillBlueGray.copyWith(
+                  borderRadius: BorderRadiusStyle.roundedBorder9,
                 ),
-                CustomElevatedButton(
-                  height: 32.v,
-                  width: 159.h,
-                  text: "Download",
-                  margin: EdgeInsets.only(left: 16.h),
-                  buttonStyle: CustomButtonStyles.fillPrimaryContainer,
-                  buttonTextStyle: CustomTextStyles.titleSmallRobotoOnError,
+                child: Stack(
+                  alignment: Alignment.topLeft,
+                  children: [
+                    CustomImageView(
+                      imagePath: ImageConstant.imgWomanPowerAlone,
+                      height: 184.v,
+                      width: 318.h,
+                      alignment: Alignment.center,
+                    ),
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                          left: 18.h,
+                          top: 17.v,
+                        ),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "안녕하세요 정유빈 님,",
+                              style: theme.textTheme.headlineSmall,
+                            ),
+                            Text(
+                              "11월 20일 수요일",
+                              style: CustomTextStyles.headlineSmallBluegray600,
+                            ),
+                            SizedBox(height: 54.v),
+                            Text(
+                              "오늘 배송 예정인 ",
+                              style: theme.textTheme.headlineSmall,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
           ),
         ],
@@ -221,31 +201,28 @@ class One1Screen extends StatelessWidget {
   }
 
   /// Section Widget
-  Widget _buildThirtyTwo(BuildContext context) {
-    return Align(
-      alignment: Alignment.center,
-      child: Container(
-        width: 338.h,
-        margin: EdgeInsets.only(
-          left: 19.h,
-          right: 10.h,
-        ),
-        padding: EdgeInsets.symmetric(
-          horizontal: 33.h,
-          vertical: 31.v,
-        ),
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: fs.Svg(
-              ImageConstant.imgGroup5,
-            ),
-            fit: BoxFit.cover,
+  Widget _buildThirtyNine(BuildContext context) {
+    return Container(
+      width: 338.h,
+      margin: EdgeInsets.only(
+        left: 19.h,
+        right: 10.h,
+      ),
+      padding: EdgeInsets.symmetric(
+        horizontal: 33.h,
+        vertical: 31.v,
+      ),
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: fs.Svg(
+            ImageConstant.imgGroup31,
           ),
+          fit: BoxFit.cover,
         ),
-        child: Text(
-          "현재 60% 정도 채워져 있습니다.",
-          style: CustomTextStyles.bodyMediumArialOnError,
-        ),
+      ),
+      child: Text(
+        "현재 60% 정도 채워져 있습니다.",
+        style: CustomTextStyles.bodyMediumArialPrimary,
       ),
     );
   }
@@ -264,11 +241,11 @@ class One1Screen extends StatelessWidget {
   String getCurrentRoute(BottomBarEnum type) {
     switch (type) {
       case BottomBarEnum.Wallet:
-        return AppRoutes.k25Page;
+        return AppRoutes.k8Page;
       case BottomBarEnum.Analysis:
         return "/";
-      case BottomBarEnum.Useronprimarycontainer:
-        return AppRoutes.k31Page;
+      case BottomBarEnum.User:
+        return AppRoutes.k20Page;
       default:
         return "/";
     }
@@ -277,10 +254,10 @@ class One1Screen extends StatelessWidget {
   ///Handling page based on route
   Widget getCurrentPage(String currentRoute) {
     switch (currentRoute) {
-      case AppRoutes.k25Page:
-        return K25Page();
-      case AppRoutes.k31Page:
-        return K31Page();
+      case AppRoutes.k8Page:
+        return K8Page();
+      case AppRoutes.k20Page:
+        return K20Page();
       default:
         return DefaultWidget();
     }

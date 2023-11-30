@@ -42,7 +42,7 @@ class Iphone13ProMaxEightScreen extends StatelessWidget {
                           alignment: Alignment.center,
                           child: Text(
                             "Create New Password",
-                            style: CustomTextStyles.headlineSmallRobotoGray800,
+                            style: CustomTextStyles.headlineSmallGray800,
                           ),
                         ),
                         SizedBox(height: 48.v),
@@ -74,7 +74,7 @@ class Iphone13ProMaxEightScreen extends StatelessWidget {
                             "Your New Passwoed must be different from previously used Password",
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
-                            style: CustomTextStyles.titleMediumInterGray80001,
+                            style: theme.textTheme.titleMedium,
                           ),
                         ),
                         SizedBox(height: 65.v),
@@ -89,6 +89,9 @@ class Iphone13ProMaxEightScreen extends StatelessWidget {
                         CustomTextFormField(
                           controller: editTextController,
                           obscureText: true,
+                          borderDecoration:
+                              TextFormFieldStyleHelper.fillPrimary,
+                          fillColor: theme.colorScheme.primary,
                         ),
                         SizedBox(height: 47.v),
                         Padding(
@@ -103,6 +106,9 @@ class Iphone13ProMaxEightScreen extends StatelessWidget {
                           controller: editTextController1,
                           textInputAction: TextInputAction.done,
                           obscureText: true,
+                          borderDecoration:
+                              TextFormFieldStyleHelper.fillPrimary,
+                          fillColor: theme.colorScheme.primary,
                         ),
                         SizedBox(height: 51.v),
                         CustomElevatedButton(

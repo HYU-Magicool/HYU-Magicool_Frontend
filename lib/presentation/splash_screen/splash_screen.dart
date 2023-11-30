@@ -20,7 +20,7 @@ class SplashScreen extends StatelessWidget {
               horizontal: 24.h,
               vertical: 88.v,
             ),
-            decoration: AppDecoration.fillOnError,
+            decoration: AppDecoration.fillPrimary,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [

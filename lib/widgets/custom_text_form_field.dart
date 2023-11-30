@@ -87,7 +87,7 @@ class CustomTextFormField extends StatelessWidget {
           controller: controller,
           focusNode: focusNode ?? FocusNode(),
           autofocus: autofocus!,
-          style: textStyle ?? CustomTextStyles.bodySmallRobotoPrimaryContainer,
+          style: textStyle ?? CustomTextStyles.bodySmallRobotoOnErrorContainer,
           obscureText: obscureText!,
           textInputAction: textInputAction,
           keyboardType: textInputType,
@@ -104,27 +104,22 @@ class CustomTextFormField extends StatelessWidget {
         suffixIcon: suffix,
         suffixIconConstraints: suffixConstraints,
         isDense: true,
-        contentPadding: contentPadding ??
-            EdgeInsets.only(
-              top: 13.v,
-              right: 13.h,
-              bottom: 13.v,
-            ),
-        fillColor: fillColor ?? theme.colorScheme.onError.withOpacity(1),
+        contentPadding: contentPadding ?? EdgeInsets.symmetric(vertical: 19.v),
+        fillColor: fillColor ?? appTheme.yellow100,
         filled: filled,
         border: borderDecoration ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(28.h),
+              borderRadius: BorderRadius.circular(8.h),
               borderSide: BorderSide.none,
             ),
         enabledBorder: borderDecoration ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(28.h),
+              borderRadius: BorderRadius.circular(8.h),
               borderSide: BorderSide.none,
             ),
         focusedBorder: borderDecoration ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(28.h),
+              borderRadius: BorderRadius.circular(8.h),
               borderSide: BorderSide.none,
             ),
       );
@@ -134,6 +129,10 @@ class CustomTextFormField extends StatelessWidget {
 extension TextFormFieldStyleHelper on CustomTextFormField {
   static OutlineInputBorder get fillYellowA => OutlineInputBorder(
         borderRadius: BorderRadius.circular(3.h),
+        borderSide: BorderSide.none,
+      );
+  static OutlineInputBorder get fillPrimary => OutlineInputBorder(
+        borderRadius: BorderRadius.circular(28.h),
         borderSide: BorderSide.none,
       );
   static OutlineInputBorder get fillRed => OutlineInputBorder(

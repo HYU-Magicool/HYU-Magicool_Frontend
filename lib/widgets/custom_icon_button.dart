@@ -50,22 +50,64 @@ class CustomIconButton extends StatelessWidget {
             padding: padding ?? EdgeInsets.zero,
             decoration: decoration ??
                 BoxDecoration(
-                  color: theme.colorScheme.onError.withOpacity(1),
-                  boxShadow: [
-                    BoxShadow(
-                      color: theme.colorScheme.primary,
-                      spreadRadius: 2.h,
-                      blurRadius: 2.h,
-                      offset: Offset(
-                        0,
-                        4,
-                      ),
-                    ),
-                  ],
+                  color: appTheme.blueGray100,
+                  borderRadius: BorderRadius.circular(34.h),
                 ),
             child: child,
           ),
           onPressed: onTap,
         ),
+      );
+}
+
+/// Extension on [CustomIconButton] to facilitate inclusion of all types of border style etc
+extension IconButtonStyleHelper on CustomIconButton {
+  static BoxDecoration get outlineBlack => BoxDecoration(
+        color: theme.colorScheme.primary,
+        boxShadow: [
+          BoxShadow(
+            color: appTheme.black900.withOpacity(0.25),
+            spreadRadius: 2.h,
+            blurRadius: 2.h,
+            offset: Offset(
+              0,
+              4,
+            ),
+          ),
+        ],
+      );
+  static BoxDecoration get fillYellowA => BoxDecoration(
+        color: appTheme.yellowA400,
+        borderRadius: BorderRadius.circular(4.h),
+      );
+  static BoxDecoration get outlineBlackTL4 => BoxDecoration(
+        color: appTheme.greenA700,
+        borderRadius: BorderRadius.circular(4.h),
+        boxShadow: [
+          BoxShadow(
+            color: appTheme.black900.withOpacity(0.25),
+            spreadRadius: 2.h,
+            blurRadius: 2.h,
+            offset: Offset(
+              0,
+              4,
+            ),
+          ),
+        ],
+      );
+  static BoxDecoration get outlineBlackTL41 => BoxDecoration(
+        color: theme.colorScheme.primary,
+        borderRadius: BorderRadius.circular(4.h),
+        boxShadow: [
+          BoxShadow(
+            color: appTheme.black900.withOpacity(0.25),
+            spreadRadius: 2.h,
+            blurRadius: 2.h,
+            offset: Offset(
+              0,
+              4,
+            ),
+          ),
+        ],
       );
 }
