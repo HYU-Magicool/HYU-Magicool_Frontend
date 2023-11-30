@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:magicool/core/app_export.dart';
 import 'package:magicool/widgets/custom_checkbox_button.dart';
+import 'package:magicool/widgets/custom_icon_button.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({Key? key})
@@ -8,7 +9,7 @@ class LoginScreen extends StatelessWidget {
           key: key,
         );
 
-  bool tf = false;
+  bool loginKeepLoggedInCheckbox = false;
 
   @override
   Widget build(BuildContext context) {
@@ -20,167 +21,166 @@ class LoginScreen extends StatelessWidget {
           width: double.maxFinite,
           child: Container(
             padding: EdgeInsets.symmetric(
-              horizontal: 51.h,
-              vertical: 44.v,
+              horizontal: 44.h,
+              vertical: 52.v,
             ),
-            decoration: AppDecoration.fillOnError,
+            decoration: AppDecoration.fillPrimary,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 18.v),
-                Container(
-                  width: 189.h,
-                  margin: EdgeInsets.only(left: 7.h),
-                  child: RichText(
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                          text: "반가워요 ! \n",
-                          style: theme.textTheme.headlineSmall,
-                        ),
-                        TextSpan(
-                          text: "mag⁚Ↄool",
-                          style: CustomTextStyles.headlineSmallBlueA700,
-                        ),
-                        TextSpan(
-                          text: "과 함께\n스마트한 일상을 \n시작해요 ",
-                          style: theme.textTheme.headlineSmall,
-                        ),
-                        TextSpan(
-                          text: "⁚Ↄ\n",
-                          style: CustomTextStyles.headlineSmallBlueA700,
-                        ),
-                      ],
-                    ),
-                    textAlign: TextAlign.left,
-                  ),
-                ),
-                SizedBox(height: 46.v),
-                Padding(
-                  padding: EdgeInsets.only(left: 7.h),
-                  child: Text(
-                    "이메일 아이디를 입력하세요",
-                    style: theme.textTheme.bodyMedium,
-                  ),
-                ),
                 SizedBox(height: 11.v),
-                Padding(
-                  padding: EdgeInsets.only(left: 7.h),
-                  child: Text(
-                    "abbccc@gmail.com",
-                    style: CustomTextStyles.bodyLargeNunitoBlack900,
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Container(
+                    width: 212.h,
+                    margin: EdgeInsets.only(
+                      left: 14.h,
+                      right: 60.h,
+                    ),
+                    child: RichText(
+                      text: TextSpan(
+                        children: [
+                          TextSpan(
+                            text: "반가워요 !  \n",
+                            style: CustomTextStyles.headlineSmallInter,
+                          ),
+                          TextSpan(
+                            text: "mag⁚Ↄool",
+                            style: CustomTextStyles.headlineLargeInterBlueA700,
+                          ),
+                          TextSpan(
+                            text: "과 함께\n스마트한 일상을 \n시작해요 ",
+                            style: CustomTextStyles.headlineSmallInter,
+                          ),
+                          TextSpan(
+                            text: "⁚Ↄ\n",
+                            style: CustomTextStyles.headlineSmallInterBlueA700,
+                          ),
+                        ],
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
                   ),
                 ),
-                SizedBox(height: 15.v),
+                SizedBox(height: 40.v),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 14.h),
+                    child: Text(
+                      "이메일 아이디를 입력하세요",
+                      style: theme.textTheme.bodyMedium,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 33.v),
                 Divider(
-                  indent: 7.h,
-                  endIndent: 2.h,
+                  indent: 14.h,
+                  endIndent: 9.h,
                 ),
-                SizedBox(height: 21.v),
-                Padding(
-                  padding: EdgeInsets.only(left: 7.h),
-                  child: Text(
-                    "비밀번호를 입력하세요",
-                    style: theme.textTheme.bodyMedium,
+                SizedBox(height: 36.v),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 14.h),
+                    child: Text(
+                      "비밀번호를 입력하세요",
+                      style: theme.textTheme.bodyMedium,
+                    ),
                   ),
                 ),
-                SizedBox(height: 20.v),
+                SizedBox(height: 31.v),
+                Divider(
+                  indent: 14.h,
+                  endIndent: 7.h,
+                ),
+                SizedBox(height: 18.v),
+                _buildLoginKeepLoggedInCheckbox(context),
+                SizedBox(height: 21.v),
+                CustomIconButton(
+                  height: 58.v,
+                  width: 280.h,
+                  decoration: IconButtonStyleHelper.outlineBlack,
+                  child: CustomImageView(
+                    imagePath: ImageConstant.imgVectorPrimary,
+                  ),
+                ),
+                SizedBox(height: 25.v),
                 Padding(
-                  padding: EdgeInsets.only(left: 7.h),
+                  padding: EdgeInsets.only(
+                    left: 28.h,
+                    right: 32.h,
+                  ),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
-                        height: 8.adaptSize,
-                        width: 8.adaptSize,
-                        decoration: BoxDecoration(
-                          color: appTheme.black900,
-                          borderRadius: BorderRadius.circular(
-                            4.h,
-                          ),
+                      Text(
+                        "비밀번호를 잊으셨나요?",
+                        style: CustomTextStyles.labelLargeNotoSansKRGray700
+                            .copyWith(
+                          decoration: TextDecoration.underline,
                         ),
                       ),
-                      Container(
-                        height: 8.adaptSize,
-                        width: 8.adaptSize,
-                        margin: EdgeInsets.only(left: 6.h),
-                        decoration: BoxDecoration(
-                          color: appTheme.black900,
-                          borderRadius: BorderRadius.circular(
-                            4.h,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        height: 8.adaptSize,
-                        width: 8.adaptSize,
-                        margin: EdgeInsets.only(left: 6.h),
-                        decoration: BoxDecoration(
-                          color: appTheme.black900,
-                          borderRadius: BorderRadius.circular(
-                            4.h,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        height: 8.adaptSize,
-                        width: 8.adaptSize,
-                        margin: EdgeInsets.only(left: 6.h),
-                        decoration: BoxDecoration(
-                          color: appTheme.black900,
-                          borderRadius: BorderRadius.circular(
-                            4.h,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        height: 8.adaptSize,
-                        width: 8.adaptSize,
-                        margin: EdgeInsets.only(left: 6.h),
-                        decoration: BoxDecoration(
-                          color: appTheme.black900,
-                          borderRadius: BorderRadius.circular(
-                            4.h,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        height: 8.adaptSize,
-                        width: 8.adaptSize,
-                        margin: EdgeInsets.only(left: 6.h),
-                        decoration: BoxDecoration(
-                          color: appTheme.black900,
-                          borderRadius: BorderRadius.circular(
-                            4.h,
+                      Padding(
+                        padding: EdgeInsets.only(left: 22.h),
+                        child: Text(
+                          "회원가입 하기",
+                          style: CustomTextStyles.labelLargeNotoSansKRGray700
+                              .copyWith(
+                            decoration: TextDecoration.underline,
                           ),
                         ),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: 20.v),
-                Divider(
-                  indent: 7.h,
+                SizedBox(height: 21.v),
+                Text(
+                  "SNS 간편 로그인하기",
+                  style: CustomTextStyles.titleMediumBlack900,
                 ),
-                SizedBox(height: 14.v),
-                _buildTf1(context),
-                Spacer(),
-                Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    "비밀번호를 잊으셨어요?",
-                    style: theme.textTheme.labelLarge!.copyWith(
-                      decoration: TextDecoration.underline,
-                    ),
+                SizedBox(height: 27.v),
+                Padding(
+                  padding: EdgeInsets.only(
+                    left: 38.h,
+                    right: 25.h,
                   ),
-                ),
-                SizedBox(height: 98.v),
-                Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    "회원가입 하기",
-                    style: theme.textTheme.labelLarge!.copyWith(
-                      decoration: TextDecoration.underline,
-                    ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      CustomIconButton(
+                        height: 54.adaptSize,
+                        width: 54.adaptSize,
+                        padding: EdgeInsets.all(12.h),
+                        decoration: IconButtonStyleHelper.fillYellowA,
+                        child: CustomImageView(
+                          imagePath: ImageConstant.imgGroup17,
+                        ),
+                      ),
+                      Spacer(
+                        flex: 50,
+                      ),
+                      CustomIconButton(
+                        height: 54.adaptSize,
+                        width: 54.adaptSize,
+                        padding: EdgeInsets.all(17.h),
+                        decoration: IconButtonStyleHelper.outlineBlackTL4,
+                        child: CustomImageView(
+                          imagePath: ImageConstant.img,
+                        ),
+                      ),
+                      Spacer(
+                        flex: 50,
+                      ),
+                      CustomIconButton(
+                        height: 54.adaptSize,
+                        width: 54.adaptSize,
+                        padding: EdgeInsets.all(12.h),
+                        decoration: IconButtonStyleHelper.outlineBlackTL41,
+                        child: CustomImageView(
+                          imagePath: ImageConstant.imgGroup16,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
@@ -192,15 +192,19 @@ class LoginScreen extends StatelessWidget {
   }
 
   /// Section Widget
-  Widget _buildTf1(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(left: 9.h),
-      child: CustomCheckboxButton(
-        text: "로그인 유지",
-        value: tf,
-        onChange: (value) {
-          tf = value;
-        },
+  Widget _buildLoginKeepLoggedInCheckbox(BuildContext context) {
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: Padding(
+        padding: EdgeInsets.only(left: 18.h),
+        child: CustomCheckboxButton(
+          alignment: Alignment.centerLeft,
+          text: "로그인 유지",
+          value: loginKeepLoggedInCheckbox,
+          onChange: (value) {
+            loginKeepLoggedInCheckbox = value;
+          },
+        ),
       ),
     );
   }

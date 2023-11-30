@@ -32,7 +32,7 @@ class UiLoginScreen extends StatelessWidget {
                 height: 60.v,
                 text: "이메일로 로그인",
                 buttonStyle: CustomButtonStyles.fillGray,
-                buttonTextStyle: CustomTextStyles.titleSmallNotoSansKROnError,
+                buttonTextStyle: CustomTextStyles.titleSmallNotoSansKRPrimary,
               ),
               SizedBox(height: 10.v),
               CustomOutlinedButton(
@@ -44,7 +44,7 @@ class UiLoginScreen extends StatelessWidget {
               SizedBox(height: 25.v),
               Text(
                 "이메일을 잊으셨어요?",
-                style: theme.textTheme.labelLarge!.copyWith(
+                style: CustomTextStyles.labelLargeNotoSansKRGray700.copyWith(
                   decoration: TextDecoration.underline,
                 ),
               ),

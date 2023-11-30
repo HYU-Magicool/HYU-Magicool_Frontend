@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: theme,
       title: 'magicool',
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRoutes.oneScreen,
+      initialRoute: AppRoutes.iphone13ProMaxSixScreen,
       routes: AppRoutes.routes,
     );
   }

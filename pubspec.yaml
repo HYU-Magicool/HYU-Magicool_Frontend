@@ -8,7 +8,6 @@ dependencies:
     sdk: flutter
   cached_network_image: ^3.2.1
   flutter_svg: ^1.1.6
-  smooth_page_indicator: ^1.0.0+2
   flutter_svg_provider: ^1.0.3
   intl: ^0.18.0
 dev_dependencies: 
@@ -30,6 +29,12 @@ flutter:
           weight: 600
         - asset: assets/fonts/InterMedium.ttf
           weight: 500
+    - family: Nunito
+      fonts: 
+        - asset: assets/fonts/NunitoRegular.ttf
+          weight: 400
+        - asset: assets/fonts/NunitoBold.ttf
+          weight: 700
     - family: Noto Sans KR
       fonts: 
         - asset: assets/fonts/NotoSansKRBold.ttf
@@ -44,23 +49,13 @@ flutter:
           weight: 700
         - asset: assets/fonts/RobotoRomanRegular.ttf
           weight: 400
-        - asset: assets/fonts/RobotoRegular.ttf
-          weight: 400
         - asset: assets/fonts/RobotoBold.ttf
           weight: 700
-    - family: Nunito
-      fonts: 
-        - asset: assets/fonts/NunitoRegular.ttf
+        - asset: assets/fonts/RobotoRegular.ttf
           weight: 400
-        - asset: assets/fonts/NunitoBold.ttf
-          weight: 700
     - family: ABeeZee
       fonts: 
         - asset: assets/fonts/ABeeZeeRegular.ttf
-          weight: 400
-    - family: Arial
-      fonts: 
-        - asset: assets/fonts/ArialMT.ttf
           weight: 400
     - family: Abhaya Libre
       fonts: 

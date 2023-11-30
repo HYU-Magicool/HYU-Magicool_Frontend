@@ -25,9 +25,9 @@ class CustomBottomBarState extends State<CustomBottomBar> {
       type: BottomBarEnum.Analysis,
     ),
     BottomMenuModel(
-      icon: ImageConstant.imgUserOnprimarycontainer,
-      activeIcon: ImageConstant.imgUserOnprimarycontainer,
-      type: BottomBarEnum.Useronprimarycontainer,
+      icon: ImageConstant.imgUser,
+      activeIcon: ImageConstant.imgUser,
+      type: BottomBarEnum.User,
     )
   ];
 
@@ -57,13 +57,13 @@ class CustomBottomBarState extends State<CustomBottomBar> {
               imagePath: bottomMenuList[index].icon,
               height: 24.adaptSize,
               width: 24.adaptSize,
-              color: theme.colorScheme.onPrimaryContainer,
+              color: appTheme.indigo200,
             ),
             activeIcon: CustomImageView(
               imagePath: bottomMenuList[index].activeIcon,
               height: 24.adaptSize,
               width: 24.adaptSize,
-              color: theme.colorScheme.onPrimaryContainer,
+              color: appTheme.indigo200,
             ),
             label: '',
           );
@@ -81,7 +81,7 @@ class CustomBottomBarState extends State<CustomBottomBar> {
 enum BottomBarEnum {
   Wallet,
   Analysis,
-  Useronprimarycontainer,
+  User,
 }
 
 class BottomMenuModel {
