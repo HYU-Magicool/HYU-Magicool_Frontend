@@ -50,7 +50,7 @@ class CustomIconButton extends StatelessWidget {
             padding: padding ?? EdgeInsets.zero,
             decoration: decoration ??
                 BoxDecoration(
-                  color: appTheme.blueGray100,
+                  color: appTheme.blue200B2,
                   borderRadius: BorderRadius.circular(34.h),
                 ),
             child: child,
@@ -109,5 +109,20 @@ extension IconButtonStyleHelper on CustomIconButton {
             ),
           ),
         ],
+      );
+  static BoxDecoration get fillPrimary => BoxDecoration(
+        color: theme.colorScheme.primary,
+      );
+  static BoxDecoration get fillGreenA => BoxDecoration(
+        color: appTheme.greenA700,
+        borderRadius: BorderRadius.circular(4.h),
+      );
+  static BoxDecoration get outlineBlackTL42 => BoxDecoration(
+        color: theme.colorScheme.primary,
+        borderRadius: BorderRadius.circular(4.h),
+        border: Border.all(
+          color: appTheme.black900.withOpacity(0.7),
+          width: 1.h,
+        ),
       );
 }

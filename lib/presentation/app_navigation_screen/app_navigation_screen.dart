@@ -29,83 +29,87 @@ class AppNavigationScreen extends StatelessWidget {
                       children: [
                         _buildScreenTitle(
                           context,
-                          screenTitle: "iPhone 13 Pro Max - Six",
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "iPhone 13 Pro Max - Seven",
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "iPhone 13 Pro Max - Eight",
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Login_확정 ",
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "Sign up",
-                        ),
-                        _buildScreenTitle(
-                          context,
                           screenTitle: "Splash Screen",
+                          onTapScreenTitle: () =>
+                              onTapScreenTitle(context, AppRoutes.splashScreen),
                         ),
                         _buildScreenTitle(
                           context,
-                          screenTitle: "UI/Login",
+                          screenTitle: "Login_page ",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.loginPageScreen),
                         ),
                         _buildScreenTitle(
                           context,
-                          screenTitle: "임시 로고",
+                          screenTitle: "Signup_page",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.signupPageScreen),
                         ),
                         _buildScreenTitle(
                           context,
-                          screenTitle: "메인 탭 - Container",
+                          screenTitle: "Login_page_input ",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.loginPageInputScreen),
                         ),
                         _buildScreenTitle(
                           context,
-                          screenTitle: "메인 탭(확정) Two",
+                          screenTitle: "Home_tab_택배 없음 - Container",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.homeTabContainerScreen),
                         ),
                         _buildScreenTitle(
                           context,
-                          screenTitle: "메인 탭(확정) One",
+                          screenTitle: "Home_tab_택배 예정",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.homeTab1Screen),
                         ),
                         _buildScreenTitle(
                           context,
-                          screenTitle: "메인 탭(확정)",
+                          screenTitle: "Home_tab_택배 예정_스피커연동",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.homeTab2Screen),
                         ),
                         _buildScreenTitle(
                           context,
-                          screenTitle: "메인 탭(확정)_스피커 이용",
+                          screenTitle: "Home_tab_스피커 활성화",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.homeTab3Screen),
                         ),
                         _buildScreenTitle(
                           context,
-                          screenTitle: "메인 탭(확정)_배송 예정 info",
+                          screenTitle: "Home_tab_배송 예정 info",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.homeTabInfoScreen),
                         ),
                         _buildScreenTitle(
                           context,
-                          screenTitle: "메인 탭(확정)_알림🔔 클릭시",
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "메인 탭 Two",
-                        ),
-                        _buildScreenTitle(
-                          context,
-                          screenTitle: "메인 탭 One",
+                          screenTitle: "Device_tab_냉장고 등록",
+                          onTapScreenTitle: () => onTapScreenTitle(
+                              context, AppRoutes.deviceTabScreen),
                         ),
                         _buildScreenTitle(
                           context,
                           screenTitle: "디바이스 탭 - 연결 X",
+                          onTapScreenTitle: () =>
+                              onTapScreenTitle(context, AppRoutes.xScreen),
                         ),
                         _buildScreenTitle(
                           context,
-                          screenTitle: "디바이스 탭",
+                          screenTitle: "디바이스 탭 - 연결 O",
+                          onTapScreenTitle: () =>
+                              onTapScreenTitle(context, AppRoutes.oScreen),
+                        ),
+                        _buildScreenTitle(
+                          context,
+                          screenTitle: "리포트 탭",
+                          onTapScreenTitle: () =>
+                              onTapScreenTitle(context, AppRoutes.k14Screen),
                         ),
                         _buildScreenTitle(
                           context,
                           screenTitle: "마이페이지 탭",
+                          onTapScreenTitle: () =>
+                              onTapScreenTitle(context, AppRoutes.k15Screen),
                         ),
                       ],
                     ),
@@ -176,38 +180,44 @@ class AppNavigationScreen extends StatelessWidget {
   Widget _buildScreenTitle(
     BuildContext context, {
     required String screenTitle,
+    Function? onTapScreenTitle,
   }) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Color(0XFFFFFFFF),
-      ),
-      child: Column(
-        children: [
-          SizedBox(height: 10.v),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.h),
-              child: Text(
-                screenTitle,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Color(0XFF000000),
-                  fontSize: 20.fSize,
-                  fontFamily: 'Roboto',
-                  fontWeight: FontWeight.w400,
+    return GestureDetector(
+      onTap: () {
+        onTapScreenTitle!.call();
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          color: Color(0XFFFFFFFF),
+        ),
+        child: Column(
+          children: [
+            SizedBox(height: 10.v),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.h),
+                child: Text(
+                  screenTitle,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Color(0XFF000000),
+                    fontSize: 20.fSize,
+                    fontFamily: 'Roboto',
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
               ),
             ),
-          ),
-          SizedBox(height: 10.v),
-          SizedBox(height: 5.v),
-          Divider(
-            height: 1.v,
-            thickness: 1.v,
-            color: Color(0XFF888888),
-          ),
-        ],
+            SizedBox(height: 10.v),
+            SizedBox(height: 5.v),
+            Divider(
+              height: 1.v,
+              thickness: 1.v,
+              color: Color(0XFF888888),
+            ),
+          ],
+        ),
       ),
     );
   }

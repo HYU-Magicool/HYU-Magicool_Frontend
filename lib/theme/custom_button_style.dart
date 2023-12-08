@@ -5,37 +5,23 @@ import 'package:flutter/material.dart';
 /// A class that offers pre-defined button styles for customizing button appearance.
 class CustomButtonStyles {
   // Filled button style
-  static ButtonStyle get fillBlueGray => ElevatedButton.styleFrom(
-        backgroundColor: appTheme.blueGray100,
-      );
-  static ButtonStyle get fillGray => ElevatedButton.styleFrom(
-        backgroundColor: appTheme.gray900,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30.h),
-        ),
-      );
   static ButtonStyle get fillIndigo => ElevatedButton.styleFrom(
         backgroundColor: appTheme.indigo400,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(4.h),
         ),
       );
-  static ButtonStyle get fillOnErrorContainer => ElevatedButton.styleFrom(
-        backgroundColor: theme.colorScheme.onErrorContainer,
+  static ButtonStyle get fillPrimary => ElevatedButton.styleFrom(
+        backgroundColor: theme.colorScheme.primary,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(4.h),
+          borderRadius: BorderRadius.circular(16.h),
         ),
+      );
+  static ButtonStyle get fillRed => ElevatedButton.styleFrom(
+        backgroundColor: appTheme.red400,
       );
 
   // Outline button style
-  static ButtonStyle get outlineBlack => ElevatedButton.styleFrom(
-        backgroundColor: theme.colorScheme.primaryContainer,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.h),
-        ),
-        shadowColor: appTheme.black900.withOpacity(0.25),
-        elevation: 4,
-      );
   static ButtonStyle get outlineBlueA => ElevatedButton.styleFrom(
         backgroundColor: appTheme.blueA400,
         shape: RoundedRectangleBorder(
@@ -43,16 +29,6 @@ class CustomButtonStyles {
         ),
         shadowColor: appTheme.blueA400.withOpacity(0.15),
         elevation: 2,
-      );
-  static ButtonStyle get outlineGray => OutlinedButton.styleFrom(
-        backgroundColor: Colors.transparent,
-        side: BorderSide(
-          color: appTheme.gray900,
-          width: 2,
-        ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30.h),
-        ),
       );
   // text button style
   static ButtonStyle get none => ButtonStyle(

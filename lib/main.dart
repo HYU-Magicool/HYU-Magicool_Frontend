@@ -4,6 +4,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:magicool/theme/theme_helper.dart';
 import 'package:magicool/routes/app_routes.dart';
 
+var globalMessengerKey = GlobalKey<ScaffoldMessengerState>();
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([
@@ -11,7 +12,7 @@ void main() {
   ]);
 
   ///Please update theme as per your need if required.
-  ThemeHelper().changeTheme('primary');
+  ///ThemeHelper().changeTheme('primary');
   runApp(MyApp());
 }
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: theme,
       title: 'magicool',
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRoutes.iphone13ProMaxSixScreen,
+      initialRoute: AppRoutes.splashScreen,
       routes: AppRoutes.routes,
     );
   }

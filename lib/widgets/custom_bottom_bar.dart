@@ -15,19 +15,28 @@ class CustomBottomBarState extends State<CustomBottomBar> {
 
   List<BottomMenuModel> bottomMenuList = [
     BottomMenuModel(
-      icon: ImageConstant.imgWallet,
-      activeIcon: ImageConstant.imgWallet,
-      type: BottomBarEnum.Wallet,
+      icon: ImageConstant.imgHomeLinear,
+      activeIcon: ImageConstant.imgHomeLinear,
+      title: "Report",
+      type: BottomBarEnum.Report,
     ),
     BottomMenuModel(
-      icon: ImageConstant.imgAnalysis,
-      activeIcon: ImageConstant.imgAnalysis,
-      type: BottomBarEnum.Analysis,
+      icon: ImageConstant.imgWallet,
+      activeIcon: ImageConstant.imgWallet,
+      title: "Report",
+      type: BottomBarEnum.Report,
+    ),
+    BottomMenuModel(
+      icon: ImageConstant.imgNavReport,
+      activeIcon: ImageConstant.imgNavReport,
+      title: "Report",
+      type: BottomBarEnum.Report,
     ),
     BottomMenuModel(
       icon: ImageConstant.imgUser,
       activeIcon: ImageConstant.imgUser,
-      type: BottomBarEnum.User,
+      title: "Report",
+      type: BottomBarEnum.Report,
     )
   ];
 
@@ -36,6 +45,7 @@ class CustomBottomBarState extends State<CustomBottomBar> {
     return Container(
       height: 75.v,
       decoration: BoxDecoration(
+        color: theme.colorScheme.primary,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(6.h),
           topRight: Radius.circular(6.h),
@@ -59,11 +69,34 @@ class CustomBottomBarState extends State<CustomBottomBar> {
               width: 24.adaptSize,
               color: appTheme.indigo200,
             ),
-            activeIcon: CustomImageView(
-              imagePath: bottomMenuList[index].activeIcon,
-              height: 24.adaptSize,
-              width: 24.adaptSize,
-              color: appTheme.indigo200,
+            activeIcon: Container(
+              decoration: AppDecoration.outlineIndigoA,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CustomImageView(
+                    imagePath: bottomMenuList[index].activeIcon,
+                    height: 24.adaptSize,
+                    width: 24.adaptSize,
+                    color: appTheme.indigoA400,
+                    margin: EdgeInsets.only(top: 13.v),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(
+                      top: 6.v,
+                      bottom: 12.v,
+                    ),
+                    child: Text(
+                      bottomMenuList[index].title ?? "",
+                      style: theme.textTheme.labelLarge!.copyWith(
+                        color: appTheme.indigoA400,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
             label: '',
           );
@@ -79,21 +112,22 @@ class CustomBottomBarState extends State<CustomBottomBar> {
 }
 
 enum BottomBarEnum {
-  Wallet,
-  Analysis,
-  User,
+  Report,
 }
 
 class BottomMenuModel {
   BottomMenuModel({
     required this.icon,
     required this.activeIcon,
+    this.title,
     required this.type,
   });
 
   String icon;
 
   String activeIcon;
+
+  String? title;
 
   BottomBarEnum type;
 }

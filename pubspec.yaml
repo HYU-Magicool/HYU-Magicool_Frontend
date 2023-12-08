@@ -8,7 +8,6 @@ dependencies:
     sdk: flutter
   cached_network_image: ^3.2.1
   flutter_svg: ^1.1.6
-  flutter_svg_provider: ^1.0.3
   intl: ^0.18.0
 dev_dependencies: 
   flutter_test: 
@@ -19,16 +18,14 @@ flutter:
     - assets/
     - assets/images/
   fonts: 
+    - family: ABeeZee
+      fonts: 
+        - asset: assets/fonts/ABeeZeeRegular.ttf
+          weight: 400
     - family: Inter
       fonts: 
         - asset: assets/fonts/InterBold.ttf
           weight: 700
-        - asset: assets/fonts/InterRegular.ttf
-          weight: 400
-        - asset: assets/fonts/InterSemiBold.ttf
-          weight: 600
-        - asset: assets/fonts/InterMedium.ttf
-          weight: 500
     - family: Nunito
       fonts: 
         - asset: assets/fonts/NunitoRegular.ttf
@@ -39,29 +36,29 @@ flutter:
       fonts: 
         - asset: assets/fonts/NotoSansKRBold.ttf
           weight: 700
-        - asset: assets/fonts/NotoSansKRBlack.ttf
-          weight: 900
     - family: Roboto
       fonts: 
-        - asset: assets/fonts/RobotoRomanMedium.ttf
-          weight: 500
-        - asset: assets/fonts/RobotoRomanBold.ttf
-          weight: 700
         - asset: assets/fonts/RobotoRomanRegular.ttf
           weight: 400
         - asset: assets/fonts/RobotoBold.ttf
           weight: 700
         - asset: assets/fonts/RobotoRegular.ttf
           weight: 400
-    - family: ABeeZee
+        - asset: assets/fonts/RobotoRomanBold.ttf
+          weight: 700
+    - family: Arial
       fonts: 
-        - asset: assets/fonts/ABeeZeeRegular.ttf
+        - asset: assets/fonts/ArialMT.ttf
           weight: 400
     - family: Abhaya Libre
       fonts: 
         - asset: assets/fonts/AbhayaLibreBold.ttf
           weight: 700
-    - family: Advent Pro
+    - family: Noto Sans
       fonts: 
-        - asset: assets/fonts/AdventProBold.ttf
+        - asset: assets/fonts/NotoSansBold.ttf
           weight: 700
+        - asset: assets/fonts/NotoSansSemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/NotoSansRegular.ttf
+          weight: 400

@@ -87,7 +87,7 @@ class CustomTextFormField extends StatelessWidget {
           controller: controller,
           focusNode: focusNode ?? FocusNode(),
           autofocus: autofocus!,
-          style: textStyle ?? CustomTextStyles.bodySmallRobotoOnErrorContainer,
+          style: textStyle ?? theme.textTheme.bodySmall,
           obscureText: obscureText!,
           textInputAction: textInputAction,
           keyboardType: textInputType,
@@ -98,45 +98,54 @@ class CustomTextFormField extends StatelessWidget {
       );
   InputDecoration get decoration => InputDecoration(
         hintText: hintText ?? "",
-        hintStyle: hintStyle ?? theme.textTheme.bodySmall,
+        hintStyle: hintStyle ?? CustomTextStyles.bodyMediumNotoSansBlack900,
         prefixIcon: prefix,
         prefixIconConstraints: prefixConstraints,
         suffixIcon: suffix,
         suffixIconConstraints: suffixConstraints,
         isDense: true,
         contentPadding: contentPadding ?? EdgeInsets.symmetric(vertical: 19.v),
-        fillColor: fillColor ?? appTheme.yellow100,
+        fillColor: fillColor ?? theme.colorScheme.primary,
         filled: filled,
         border: borderDecoration ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8.h),
-              borderSide: BorderSide.none,
+              borderRadius: BorderRadius.circular(10.h),
+              borderSide: BorderSide(
+                color: appTheme.indigoA400,
+                width: 1,
+              ),
             ),
         enabledBorder: borderDecoration ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8.h),
-              borderSide: BorderSide.none,
+              borderRadius: BorderRadius.circular(10.h),
+              borderSide: BorderSide(
+                color: appTheme.indigoA400,
+                width: 1,
+              ),
             ),
         focusedBorder: borderDecoration ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8.h),
-              borderSide: BorderSide.none,
+              borderRadius: BorderRadius.circular(10.h),
+              borderSide: BorderSide(
+                color: appTheme.indigoA400,
+                width: 1,
+              ),
             ),
       );
 }
 
 /// Extension on [CustomTextFormField] to facilitate inclusion of all types of border style etc
 extension TextFormFieldStyleHelper on CustomTextFormField {
-  static OutlineInputBorder get fillYellowA => OutlineInputBorder(
-        borderRadius: BorderRadius.circular(3.h),
+  static OutlineInputBorder get fillBlueGray => OutlineInputBorder(
+        borderRadius: BorderRadius.circular(21.h),
         borderSide: BorderSide.none,
+      );
+  static UnderlineInputBorder get underLineGray => UnderlineInputBorder(
+        borderSide: BorderSide(
+          color: appTheme.gray200,
+        ),
       );
   static OutlineInputBorder get fillPrimary => OutlineInputBorder(
-        borderRadius: BorderRadius.circular(28.h),
-        borderSide: BorderSide.none,
-      );
-  static OutlineInputBorder get fillRed => OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8.h),
         borderSide: BorderSide.none,
       );
 }

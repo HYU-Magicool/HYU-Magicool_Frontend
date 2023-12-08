@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:magicool/core/app_export.dart';
-import 'package:magicool/presentation/k20_page/k20_page.dart';
-import 'package:magicool/presentation/k8_page/k8_page.dart';
-import 'package:magicool/widgets/app_bar/appbar_leading_image.dart';
-import 'package:magicool/widgets/app_bar/appbar_title.dart';
-import 'package:magicool/widgets/app_bar/custom_app_bar.dart';
 import 'package:magicool/widgets/custom_bottom_bar.dart';
+import 'package:magicool/widgets/custom_text_form_field.dart';
 
 class K15Screen extends StatelessWidget {
   K15Screen({Key? key})
       : super(
           key: key,
         );
+
+  TextEditingController editTextOneController = TextEditingController();
+
+  TextEditingController editTextTwoController = TextEditingController();
+
+  TextEditingController editTextThreeController = TextEditingController();
+
+  TextEditingController editTextFourController = TextEditingController();
 
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 
@@ -21,48 +25,166 @@ class K15Screen extends StatelessWidget {
 
     return SafeArea(
       child: Scaffold(
-        appBar: _buildAppBar(context),
+        resizeToAvoidBottomInset: false,
         body: Container(
           width: double.maxFinite,
-          padding: EdgeInsets.symmetric(vertical: 18.v),
+          padding: EdgeInsets.symmetric(horizontal: 17.h),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Spacer(
-                flex: 31,
-              ),
-              Text(
-                "아직 도착한 알림이 없네요!",
-                style: theme.textTheme.headlineSmall,
-              ),
-              Spacer(
-                flex: 68,
-              ),
+              _buildEditTextOne(context),
+              SizedBox(height: 30.v),
+              _buildEditTextTwo(context),
+              SizedBox(height: 30.v),
+              _buildEditTextThree(context),
+              SizedBox(height: 30.v),
+              _buildEditTextFour(context),
+              SizedBox(height: 5.v),
             ],
           ),
         ),
-        bottomNavigationBar: Padding(
-          padding: EdgeInsets.only(right: 3.h),
-          child: _buildBottomBar(context),
-        ),
+        bottomNavigationBar: _buildBottomBar(context),
       ),
     );
   }
 
   /// Section Widget
-  PreferredSizeWidget _buildAppBar(BuildContext context) {
-    return CustomAppBar(
-      leadingWidth: 59.h,
-      leading: AppbarLeadingImage(
-        imagePath: ImageConstant.imgIconOnerrorcontainer16x16,
-        margin: EdgeInsets.only(
-          left: 25.h,
-          top: 11.v,
-          bottom: 11.v,
+  Widget _buildEditTextOne(BuildContext context) {
+    return CustomTextFormField(
+      controller: editTextOneController,
+      hintText: "  계정 정보 설정",
+      prefix: Container(
+        margin: EdgeInsets.fromLTRB(7.h, 16.v, 8.h, 15.v),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(
+            10.h,
+          ),
+        ),
+        child: CustomImageView(
+          imagePath: ImageConstant.imgAccountuser,
+          height: 23.v,
+          width: 21.h,
         ),
       ),
-      centerTitle: true,
-      title: AppbarTitle(
-        text: "알림 센터",
+      prefixConstraints: BoxConstraints(
+        maxHeight: 54.v,
+      ),
+      suffix: Container(
+        margin: EdgeInsets.fromLTRB(30.h, 15.v, 8.h, 15.v),
+        child: CustomImageView(
+          imagePath: ImageConstant.imgChevronarrowleft,
+          height: 24.adaptSize,
+          width: 24.adaptSize,
+        ),
+      ),
+      suffixConstraints: BoxConstraints(
+        maxHeight: 54.v,
+      ),
+    );
+  }
+
+  /// Section Widget
+  Widget _buildEditTextTwo(BuildContext context) {
+    return CustomTextFormField(
+      controller: editTextTwoController,
+      hintText: "  냉장고 보안 비밀번호 설정",
+      prefix: Container(
+        margin: EdgeInsets.fromLTRB(7.h, 14.v, 8.h, 17.v),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(
+            10.h,
+          ),
+        ),
+        child: CustomImageView(
+          imagePath: ImageConstant.imgLock,
+          height: 23.v,
+          width: 21.h,
+        ),
+      ),
+      prefixConstraints: BoxConstraints(
+        maxHeight: 54.v,
+      ),
+      suffix: Container(
+        margin: EdgeInsets.fromLTRB(30.h, 15.v, 8.h, 15.v),
+        child: CustomImageView(
+          imagePath: ImageConstant.imgChevronarrowleft,
+          height: 24.adaptSize,
+          width: 24.adaptSize,
+        ),
+      ),
+      suffixConstraints: BoxConstraints(
+        maxHeight: 54.v,
+      ),
+    );
+  }
+
+  /// Section Widget
+  Widget _buildEditTextThree(BuildContext context) {
+    return CustomTextFormField(
+      controller: editTextThreeController,
+      hintText: "  알림 설정",
+      prefix: Container(
+        margin: EdgeInsets.fromLTRB(7.h, 13.v, 8.h, 18.v),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(
+            10.h,
+          ),
+        ),
+        child: CustomImageView(
+          imagePath: ImageConstant.imgMediaVolumeupfill,
+          height: 23.v,
+          width: 21.h,
+        ),
+      ),
+      prefixConstraints: BoxConstraints(
+        maxHeight: 54.v,
+      ),
+      suffix: Container(
+        margin: EdgeInsets.fromLTRB(30.h, 15.v, 8.h, 15.v),
+        child: CustomImageView(
+          imagePath: ImageConstant.imgChevronarrowleft,
+          height: 24.adaptSize,
+          width: 24.adaptSize,
+        ),
+      ),
+      suffixConstraints: BoxConstraints(
+        maxHeight: 54.v,
+      ),
+    );
+  }
+
+  /// Section Widget
+  Widget _buildEditTextFour(BuildContext context) {
+    return CustomTextFormField(
+      controller: editTextFourController,
+      hintText: "  시스템 설정",
+      textInputAction: TextInputAction.done,
+      prefix: Container(
+        margin: EdgeInsets.fromLTRB(5.h, 16.v, 5.h, 17.v),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(
+            10.h,
+          ),
+        ),
+        child: CustomImageView(
+          imagePath: ImageConstant.imgSystemSettingsline,
+          height: 21.v,
+          width: 26.h,
+        ),
+      ),
+      prefixConstraints: BoxConstraints(
+        maxHeight: 54.v,
+      ),
+      suffix: Container(
+        margin: EdgeInsets.fromLTRB(30.h, 15.v, 8.h, 15.v),
+        child: CustomImageView(
+          imagePath: ImageConstant.imgChevronarrowleft,
+          height: 24.adaptSize,
+          width: 24.adaptSize,
+        ),
+      ),
+      suffixConstraints: BoxConstraints(
+        maxHeight: 54.v,
       ),
     );
   }
@@ -70,36 +192,7 @@ class K15Screen extends StatelessWidget {
   /// Section Widget
   Widget _buildBottomBar(BuildContext context) {
     return CustomBottomBar(
-      onChanged: (BottomBarEnum type) {
-        Navigator.pushNamed(
-            navigatorKey.currentContext!, getCurrentRoute(type));
-      },
+      onChanged: (BottomBarEnum type) {},
     );
-  }
-
-  ///Handling route based on bottom click actions
-  String getCurrentRoute(BottomBarEnum type) {
-    switch (type) {
-      case BottomBarEnum.Wallet:
-        return AppRoutes.k8Page;
-      case BottomBarEnum.Analysis:
-        return "/";
-      case BottomBarEnum.User:
-        return AppRoutes.k20Page;
-      default:
-        return "/";
-    }
-  }
-
-  ///Handling page based on route
-  Widget getCurrentPage(String currentRoute) {
-    switch (currentRoute) {
-      case AppRoutes.k8Page:
-        return K8Page();
-      case AppRoutes.k20Page:
-        return K20Page();
-      default:
-        return DefaultWidget();
-    }
   }
 }
